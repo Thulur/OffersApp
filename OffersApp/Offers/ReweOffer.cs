@@ -8,14 +8,11 @@ namespace OffersApp.Offers
 {
     internal class ReweOffer : IOffer
     {
-        public int Price { get; set; }
-        public int Percentage { get; set; }
+        public double Price { get; set; }
+        public double Percentage { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
 
-        public void Parse(string input)
-        {
-            throw new NotImplementedException();
-        }
+        public string Infos => throw new NotImplementedException();
     }
 }

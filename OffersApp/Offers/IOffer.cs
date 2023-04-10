@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,14 +9,15 @@ namespace OffersApp.Offers
 {
     internal interface IOffer
     {
-        int Price { get; set; }
+        [JsonIgnore]
+        string Infos { get; }
 
-        int Percentage { get; set; }
+        double Price { get; set; }
+
+        double Percentage { get; set; }
 
         DateTime StartDate { get; set; }
 
         DateTime EndDate { get; set; }
-
-        void Parse(string input);
     }
 }

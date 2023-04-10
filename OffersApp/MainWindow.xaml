@@ -10,6 +10,15 @@
         <local:MainViewModel/>
     </Window.DataContext>
     <Grid>
-        <Label Content="{Binding Title}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label Content="{Binding Title}" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <Button Content="Laden" Command="{Binding LoadOffersCommand}" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" Margin="10,10,10,10" Padding="20,0"/>
+        <DataGrid ItemsSource="{Binding Offers}" Grid.Row="1" Grid.Column="0"/>
     </Grid>
 </Window>
